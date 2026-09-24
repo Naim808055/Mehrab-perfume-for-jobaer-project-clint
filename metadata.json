@@ -1,0 +1,6 @@
+{
+  "name": "MEHRAB PERFUME - Luxury Fragrances & Attar E-Commerce",
+  "description": "Premium e-commerce store for Mehrab Perfume featuring pure Oud, Musk, Floral, and Woody fragrances, 3-image product gallery, live cart & checkout, customer account with order cancellation, and full admin dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

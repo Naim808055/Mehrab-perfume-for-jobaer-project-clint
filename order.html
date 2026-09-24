@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Invoice & Confirmation - MEHRAB PERFUME</title>
+  <meta name="description" content="View your Mehrab Perfume order receipt and track delivery status.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-notice">
+        <span>✨</span> Official Artisanal Order Invoice
+      </div>
+      <div class="top-bar-links">
+        <a href="https://wa.me/8801938199254" target="_blank" class="top-bar-link">
+          <span>📞 WhatsApp:</span> <strong>01938199254</strong>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="main-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="/public/assets/logo.png" alt="MEHRAB PERFUME" class="nav-logo-img">
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="shop.html" class="nav-link">Shop</a></li>
+          <li><a href="account.html" class="nav-link">My Orders</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="account.html" class="nav-icon-btn nav-user-link" title="My Account">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span class="nav-user-label" style="font-size: 0.85rem; margin-left: 0.35rem; font-weight: 600;">Account</span>
+        </a>
+
+        <a href="cart.html" class="nav-icon-btn" title="View Cart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top: 3.5rem; padding-bottom: 5rem;">
+    <!-- Order receipt rendered here by js/order.js -->
+    <div id="orderReceiptContainer">
+      <div style="text-align: center; padding: 4rem;">
+        <p style="color: var(--color-gray-text);">Loading order invoice...</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- In-page Custom Cancel Order Modal -->
+  <div id="cancelOrderReceiptModal" class="custom-confirm-modal">
+    <div class="custom-confirm-box">
+      <div class="confirm-icon-wrap">✕</div>
+      <h3 class="confirm-title">Cancel Order?</h3>
+      <p id="cancelOrderReceiptModalText" class="confirm-desc">Are you sure you want to cancel this order? This cannot be undone.</p>
+      <div class="confirm-actions">
+        <button id="btnConfirmCancelReceipt" class="btn btn-danger-outline btn-sm">Yes, Cancel Order</button>
+        <button id="btnCloseCancelReceiptModal" class="btn btn-outline-gold btn-sm">Keep Order</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding-top: 0;">
+        <div>© 2026 MEHRAB PERFUME. All Rights Reserved.</div>
+        <div>Customer Care WhatsApp: 01938199254</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/order.js"></script>
+</body>
+</html>

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - MEHRAB PERFUME</title>
+  <meta name="description" content="Administrative control center for Mehrab Perfume orders, products, and combo offers.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background: #060e15;">
+
+  <div class="admin-layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+      <div style="display: flex; align-items: center; justify-content: center; padding: 0.5rem 0 1.5rem; border-bottom: 1px solid var(--color-border);">
+        <img src="/public/assets/logo.png" alt="MEHRAB PERFUME" style="height: 48px; width: auto; max-width: 190px; object-fit: contain; filter: drop-shadow(0 0 1px rgba(255,255,255,0.4));">
+      </div>
+
+      <ul class="admin-sidebar-nav">
+        <li>
+          <a href="#" class="admin-nav-item active" data-tab="orders">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line></svg>
+            <span>Orders Management</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="admin-nav-item" data-tab="products">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+            <span>Products (3 Images)</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="admin-nav-item" data-tab="combos">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <span>Combo Pack Offers</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="admin-nav-item" data-tab="customers">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            <span>Customer Directory</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="admin-nav-item" data-tab="settings">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            <span>Store Settings</span>
+          </a>
+        </li>
+      </ul>
+
+      <div style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--color-border);">
+        <a href="index.html" target="_blank" class="admin-nav-item" style="color: var(--color-cream); font-size: 0.85rem; margin-bottom: 0.5rem;">
+          <span>🌐 Public Storefront ↗</span>
+        </a>
+        <button id="adminLogoutBtn" class="admin-nav-item" style="width: 100%; color: #f44336; background: rgba(244, 67, 54, 0.08);">
+          <span>⏻ Sign Out Admin</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="admin-content">
+      
+      <!-- Top Bar with Mobile Toggle -->
+      <div class="admin-header">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <button id="adminMobileToggle" class="btn btn-outline-gold btn-sm" style="display: none;" aria-label="Toggle Sidebar">☰ Menu</button>
+          <div>
+            <h1 style="font-size: 1.8rem; color: var(--color-white); margin-bottom: 0.2rem;">Store Administration</h1>
+            <p style="font-size: 0.85rem; color: var(--color-gray-text);">Manage perfumes, process client orders & configure combo offers</p>
+          </div>
+        </div>
+
+        <div>
+          <button class="btn btn-gold btn-sm" onclick="openAddProductModal()">+ Add New Perfume</button>
+        </div>
+      </div>
+
+      <!-- METRICS OVERVIEW (4 STAT CARDS) -->
+      <div class="admin-stats-grid">
+        <div class="admin-stat-card">
+          <div>
+            <div class="stat-label">Total Orders Placed</div>
+            <div id="statTotalOrders" class="stat-val">0</div>
+          </div>
+          <div style="font-size: 1.8rem; opacity: 0.3;">📦</div>
+        </div>
+
+        <div class="admin-stat-card">
+          <div>
+            <div class="stat-label">Total Sales Revenue</div>
+            <div id="statTotalRevenue" class="stat-val">৳0</div>
+          </div>
+          <div style="font-size: 1.8rem; opacity: 0.3;">💰</div>
+        </div>
+
+        <div class="admin-stat-card">
+          <div>
+            <div class="stat-label">Active Catalog Perfumes</div>
+            <div id="statTotalProducts" class="stat-val">50</div>
+          </div>
+          <div style="font-size: 1.8rem; opacity: 0.3;">✨</div>
+        </div>
+
+        <div class="admin-stat-card">
+          <div>
+            <div class="stat-label">Pending Action Orders</div>
+            <div id="statPendingOrders" class="stat-val" style="color: #FFB300;">0</div>
+          </div>
+          <div style="font-size: 1.8rem; opacity: 0.3;">⏳</div>
+        </div>
+      </div>
+
+      <!-- TAB 1: ORDERS MANAGEMENT -->
+      <section id="section-orders" class="admin-tab-section">
+        <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.75rem;">
+          
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+            <h2 style="font-size: 1.35rem; color: var(--color-white);">Customer Orders</h2>
+            
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+              <input type="text" id="adminOrderSearchInput" class="form-control" placeholder="Search by Order ID or Name..." style="max-width: 250px; font-size: 0.85rem;" oninput="renderOrdersTable()">
+              
+              <select id="adminOrderFilterStatus" class="form-control" style="width: auto; font-size: 0.85rem;" onchange="renderOrdersTable()">
+                <option value="all">All Statuses</option>
+                <option value="Pending">Pending</option>
+                <option value="Confirmed">Confirmed</option>
+                <option value="Delivered">Delivered</option>
+                <option value="Cancelled">Cancelled</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Customer Info</th>
+                  <th>Date</th>
+                  <th>Items & Sizes</th>
+                  <th>Total Amount</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="adminOrdersTableBody">
+                <!-- Rendered by js/admin.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: PRODUCTS MANAGEMENT (3 IMAGES) -->
+      <section id="section-products" class="admin-tab-section" style="display: none;">
+        <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.75rem;">
+          
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <h2 style="font-size: 1.35rem; color: var(--color-white);">Catalog Perfumes (Up to 3 Images Each)</h2>
+              <p style="font-size: 0.85rem; color: var(--color-gray-text);">Manage 6ml / 12ml / 15ml pricing and active display status.</p>
+            </div>
+            
+            <div style="display: flex; gap: 0.75rem;">
+              <input type="text" id="adminProductSearchInput" class="form-control" placeholder="Search perfume catalog..." style="max-width: 240px; font-size: 0.85rem;" oninput="renderProductsTable()">
+              <button class="btn btn-gold btn-sm" onclick="openAddProductModal()">+ Add New Perfume</button>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Perfume Name</th>
+                  <th>Category</th>
+                  <th>Volume Pricing</th>
+                  <th>Visibility</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="adminProductsTableBody">
+                <!-- Rendered by js/admin.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: COMBO OFFERS MANAGEMENT (OFFER ON / OFFER OFF) -->
+      <section id="section-combos" class="admin-tab-section" style="display: none;">
+        <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.75rem;">
+          
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <h2 style="font-size: 1.35rem; color: var(--color-white);">Combo Pack Offers & Gifting Sets</h2>
+              <p style="font-size: 0.85rem; color: var(--color-gray-text);">
+                Toggle <strong>OFFER ON</strong> to display on public home page, or <strong>OFFER OFF</strong> to hide.
+              </p>
+            </div>
+            <button class="btn btn-gold btn-sm" onclick="openAddComboModal()">+ Create New Combo</button>
+          </div>
+
+          <div id="adminCombosList" style="display: flex; flex-direction: column; gap: 1.25rem;">
+            <!-- Rendered by js/admin.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: CUSTOMER DIRECTORY -->
+      <section id="section-customers" class="admin-tab-section" style="display: none;">
+        <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.75rem;">
+          <h2 style="font-size: 1.35rem; color: var(--color-white); margin-bottom: 1.5rem;">Registered Customers</h2>
+
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Customer Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Total Orders</th>
+                  <th>Total Spent</th>
+                  <th>Member Since</th>
+                </tr>
+              </thead>
+              <tbody id="adminCustomersTableBody">
+                <!-- Rendered by js/admin.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 5: SETTINGS -->
+      <section id="section-settings" class="admin-tab-section" style="display: none;">
+        <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 2rem; max-width: 650px;">
+          <h2 style="font-size: 1.35rem; color: var(--color-white); margin-bottom: 1.5rem;">Store Contact & Metadata Settings</h2>
+
+          <form id="adminSettingsForm">
+            <div class="form-group">
+              <label class="form-label" for="settingWhatsApp">Official WhatsApp Hotline *</label>
+              <input type="text" id="settingWhatsApp" class="form-control" value="01938199254" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="settingEmail">Official Email *</label>
+              <input type="email" id="settingEmail" class="form-control" value="mehrab140822@gmail.com" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="settingLocation">Physical Store Address *</label>
+              <textarea id="settingLocation" class="form-control" rows="2" required>Uttara sector 3 takwa masjid fast gate, Dhaka, Bangladesh, 1230</textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="settingFacebook">Facebook Page URL</label>
+              <input type="url" id="settingFacebook" class="form-control" value="https://www.facebook.com/share/1DG9Jf4tPr/">
+            </div>
+
+            <button type="submit" class="btn btn-gold btn-block" style="padding: 0.95rem; margin-top: 1rem;">
+              Save Store Configuration
+            </button>
+          </form>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- MODAL: ADD / EDIT PRODUCT (3 PRODUCT IMAGES) -->
+  <div id="adminProductModal" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="productModalTitle" style="color: var(--color-gold);">Add New Artisanal Perfume</h3>
+        <button onclick="closeProductModal()" style="color: var(--color-cream); font-size: 1.4rem;">✕</button>
+      </div>
+      <form id="productForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label" for="prodName">Perfume Scent Name *</label>
+            <input type="text" id="prodName" class="form-control" placeholder="e.g. Imperial Taif Rose Oud" required>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label" for="prodCategory">Category *</label>
+              <select id="prodCategory" class="form-control">
+                <option value="Oud">Oud</option>
+                <option value="Musk">Musk</option>
+                <option value="Floral">Floral</option>
+                <option value="Woody">Woody</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="prodBadge">Promotional Badge</label>
+              <select id="prodBadge" class="form-control">
+                <option value="None">None</option>
+                <option value="Bestseller">Bestseller</option>
+                <option value="Exclusive">Exclusive</option>
+                <option value="Royal Reserve">Royal Reserve</option>
+                <option value="New Release">New Release</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- PRICING FOR 6ml, 12ml, 15ml -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem;">
+            <div class="form-group">
+              <label class="form-label" for="prodPrice6ml">Price 6ml (৳) *</label>
+              <input type="number" id="prodPrice6ml" class="form-control" value="550" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="prodPrice12ml">Price 12ml (৳) *</label>
+              <input type="number" id="prodPrice12ml" class="form-control" value="990" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="prodPrice15ml">Price 15ml (৳) *</label>
+              <input type="number" id="prodPrice15ml" class="form-control" value="1200" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="prodDesc">Description & Scent Notes *</label>
+            <textarea id="prodDesc" class="form-control" rows="3" placeholder="Artisanal blend notes..." required></textarea>
+          </div>
+
+          <!-- THREE PRODUCT IMAGES SYSTEM -->
+          <div style="background: #060d14; border: 1px dashed var(--color-border); border-radius: var(--radius-md); padding: 1.25rem; margin-top: 1rem;">
+            <div style="margin-bottom: 1rem;">
+              <h4 style="font-size: 0.95rem; color: var(--color-gold); margin-bottom: 0.25rem;">
+                📸 3 Product Images System (Device Storage & Link)
+              </h4>
+              <p style="font-size: 0.8rem; color: var(--color-gray-text);">
+                Upload pictures directly from your phone/PC storage (Gallery / Camera / Files) or paste web image links.
+              </p>
+            </div>
+
+            <!-- IMAGE 1 -->
+            <div class="image-upload-card">
+              <div class="image-upload-header">
+                <span class="image-upload-title">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                  Image 1 (Main Front Angle) *
+                </span>
+                <span style="font-size: 0.72rem; color: var(--color-gold);">Primary Thumbnail</span>
+              </div>
+              <div class="image-upload-controls">
+                <label class="btn-upload-file" for="prodImgFile1">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                  Device Storage / Gallery
+                </label>
+                <input type="file" id="prodImgFile1" accept="image/*" style="display: none;">
+                <input type="text" id="prodImg1" class="form-control" placeholder="Or paste Image URL (https://...)" required>
+              </div>
+              <div id="prodImgPreview1Wrap" class="image-upload-preview-wrap" style="display: none;">
+                <img id="prodImgPreview1" class="image-upload-preview-thumb" src="" alt="Image 1 Preview">
+                <div class="image-upload-preview-info">
+                  <div style="font-weight: 600; color: var(--color-cream);" id="prodImgInfo1">Device Image Selected</div>
+                  <div style="font-size: 0.75rem; color: #4CAF50;">✓ Ready to Save</div>
+                </div>
+                <button type="button" onclick="clearProductImage(1)" style="color: #f44336; font-size: 0.8rem; padding: 0.25rem 0.5rem; border: 1px solid rgba(244,67,54,0.3); border-radius: 4px;">✕ Remove</button>
+              </div>
+            </div>
+
+            <!-- IMAGE 2 -->
+            <div class="image-upload-card">
+              <div class="image-upload-header">
+                <span class="image-upload-title">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                  Image 2 (Side / Details Angle)
+                </span>
+                <span style="font-size: 0.72rem; color: var(--color-gray-text);">Gallery Angle</span>
+              </div>
+              <div class="image-upload-controls">
+                <label class="btn-upload-file" for="prodImgFile2">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                  Device Storage / Gallery
+                </label>
+                <input type="file" id="prodImgFile2" accept="image/*" style="display: none;">
+                <input type="text" id="prodImg2" class="form-control" placeholder="Or paste Image URL (https://...)">
+              </div>
+              <div id="prodImgPreview2Wrap" class="image-upload-preview-wrap" style="display: none;">
+                <img id="prodImgPreview2" class="image-upload-preview-thumb" src="" alt="Image 2 Preview">
+                <div class="image-upload-preview-info">
+                  <div style="font-weight: 600; color: var(--color-cream);" id="prodImgInfo2">Device Image Selected</div>
+                  <div style="font-size: 0.75rem; color: #4CAF50;">✓ Ready to Save</div>
+                </div>
+                <button type="button" onclick="clearProductImage(2)" style="color: #f44336; font-size: 0.8rem; padding: 0.25rem 0.5rem; border: 1px solid rgba(244,67,54,0.3); border-radius: 4px;">✕ Remove</button>
+              </div>
+            </div>
+
+            <!-- IMAGE 3 -->
+            <div class="image-upload-card" style="margin-bottom: 0;">
+              <div class="image-upload-header">
+                <span class="image-upload-title">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                  Image 3 (Packaging / Texture Angle)
+                </span>
+                <span style="font-size: 0.72rem; color: var(--color-gray-text);">Packaging Angle</span>
+              </div>
+              <div class="image-upload-controls">
+                <label class="btn-upload-file" for="prodImgFile3">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                  Device Storage / Gallery
+                </label>
+                <input type="file" id="prodImgFile3" accept="image/*" style="display: none;">
+                <input type="text" id="prodImg3" class="form-control" placeholder="Or paste Image URL (https://...)">
+              </div>
+              <div id="prodImgPreview3Wrap" class="image-upload-preview-wrap" style="display: none;">
+                <img id="prodImgPreview3" class="image-upload-preview-thumb" src="" alt="Image 3 Preview">
+                <div class="image-upload-preview-info">
+                  <div style="font-weight: 600; color: var(--color-cream);" id="prodImgInfo3">Device Image Selected</div>
+                  <div style="font-size: 0.75rem; color: #4CAF50;">✓ Ready to Save</div>
+                </div>
+                <button type="button" onclick="clearProductImage(3)" style="color: #f44336; font-size: 0.8rem; padding: 0.25rem 0.5rem; border: 1px solid rgba(244,67,54,0.3); border-radius: 4px;">✕ Remove</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark btn-sm" onclick="closeProductModal()">Cancel</button>
+          <button type="submit" class="btn btn-gold btn-sm">Save Perfume</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: ADD / EDIT COMBO PACK -->
+  <div id="adminComboModal" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="comboModalTitle" style="color: var(--color-gold);">Create Combo Offer</h3>
+        <button onclick="closeComboModal()" style="color: var(--color-cream); font-size: 1.4rem;">✕</button>
+      </div>
+      <form id="comboForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label" for="comboTitle">Combo Title *</label>
+            <input type="text" id="comboTitle" class="form-control" placeholder="e.g. Royal Heritage Duo Set" required>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label" for="comboEyebrow">Eyebrow Tag</label>
+              <input type="text" id="comboEyebrow" class="form-control" placeholder="e.g. LIMITED EDITION SET">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="comboStatusSelect">Public Offer Status *</label>
+              <select id="comboStatusSelect" class="form-control">
+                <option value="true">OFFER ON (Visible on Home)</option>
+                <option value="false">OFFER OFF (Hidden from Home)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="image-upload-card">
+            <div class="image-upload-header">
+              <span class="image-upload-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                Combo Image * (Device Storage or Link)
+              </span>
+            </div>
+            <div class="image-upload-controls">
+              <label class="btn-upload-file" for="comboImgFile">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                Device Storage / Gallery
+              </label>
+              <input type="file" id="comboImgFile" accept="image/*" style="display: none;">
+              <input type="text" id="comboImage" class="form-control" placeholder="Or paste Image URL (https://...)" required>
+            </div>
+            <div id="comboImgPreviewWrap" class="image-upload-preview-wrap" style="display: none;">
+              <img id="comboImgPreview" class="image-upload-preview-thumb" src="" alt="Combo Preview">
+              <div class="image-upload-preview-info">
+                <div style="font-weight: 600; color: var(--color-cream);" id="comboImgInfo">Image Selected</div>
+                <div style="font-size: 0.75rem; color: #4CAF50;">✓ Ready to Save</div>
+              </div>
+              <button type="button" onclick="clearComboImage()" style="color: #f44336; font-size: 0.8rem; padding: 0.25rem 0.5rem; border: 1px solid rgba(244,67,54,0.3); border-radius: 4px;">✕ Remove</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="comboDesc">Offer Description *</label>
+            <textarea id="comboDesc" class="form-control" rows="2" placeholder="Details of the perfume combination..." required></textarea>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label" for="comboMetaLabel">Price / Meta Label</label>
+              <input type="text" id="comboMetaLabel" class="form-control" placeholder="e.g. Special Bundle Price">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="comboMetaValue">Price / Meta Value</label>
+              <input type="text" id="comboMetaValue" class="form-control" placeholder="e.g. ৳1,890 (Save ৳350)">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark btn-sm" onclick="closeComboModal()">Cancel</button>
+          <button type="submit" class="btn btn-gold btn-sm">Save Combo</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: VIEW ORDER DETAILS -->
+  <div id="adminOrderModal" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 style="color: var(--color-gold);">Order Invoice Details</h3>
+        <button onclick="closeOrderModal()" style="color: var(--color-cream); font-size: 1.4rem;">✕</button>
+      </div>
+      <div id="adminOrderModalBody" class="modal-body">
+        <!-- Rendered by js/admin.js -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-gold btn-sm" onclick="closeOrderModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

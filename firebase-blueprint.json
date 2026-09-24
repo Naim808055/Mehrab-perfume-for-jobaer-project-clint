@@ -1,0 +1,271 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Customer profile with contact information",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique user identification UID"
+        },
+        "fullName": {
+          "type": "string",
+          "description": "Customer full name",
+          "maxLength": 100
+        },
+        "email": {
+          "type": "string",
+          "description": "Customer email address",
+          "maxLength": 120
+        },
+        "phone": {
+          "type": "string",
+          "description": "Customer phone number",
+          "maxLength": 20
+        },
+        "role": {
+          "type": "string",
+          "description": "User role",
+          "enum": ["customer", "admin"]
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp ISO string or server date"
+        }
+      },
+      "required": ["id", "fullName", "email"]
+    },
+    "Admin": {
+      "title": "Admin",
+      "description": "Administrator authorization record",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Admin UID"
+        },
+        "email": {
+          "type": "string",
+          "description": "Admin verified email",
+          "maxLength": 120
+        },
+        "role": {
+          "type": "string",
+          "description": "Role marker",
+          "enum": ["admin"]
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Creation timestamp"
+        }
+      },
+      "required": ["id", "email", "role"]
+    },
+    "Product": {
+      "title": "Product",
+      "description": "Luxury perfume fragrance product",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique product alphanumeric ID"
+        },
+        "name": {
+          "type": "string",
+          "description": "Product display name",
+          "maxLength": 150
+        },
+        "category": {
+          "type": "string",
+          "description": "Fragrance category",
+          "enum": ["Oud", "Musk", "Floral", "Woody"]
+        },
+        "description": {
+          "type": "string",
+          "description": "Fragrance olfactory notes and details",
+          "maxLength": 2000
+        },
+        "price6ml": {
+          "type": "number",
+          "description": "Price in BDT for 6ml"
+        },
+        "price12ml": {
+          "type": "number",
+          "description": "Price in BDT for 12ml"
+        },
+        "price15ml": {
+          "type": "number",
+          "description": "Price in BDT for 15ml"
+        },
+        "badge": {
+          "type": "string",
+          "description": "Special badge like Bestseller, New, Luxury",
+          "maxLength": 50
+        },
+        "images": {
+          "type": "array",
+          "description": "Up to 3 high-resolution product image URLs"
+        },
+        "isActive": {
+          "type": "boolean",
+          "description": "Whether product is visible in store"
+        },
+        "rating": {
+          "type": "number",
+          "description": "Customer average rating score"
+        },
+        "reviewsCount": {
+          "type": "number",
+          "description": "Total review count"
+        }
+      },
+      "required": ["id", "name", "category", "price6ml", "price12ml", "price15ml"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Customer placed order",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Formatted order ID e.g. MP-1234567",
+          "maxLength": 30
+        },
+        "userId": {
+          "type": "string",
+          "description": "Customer account UID or guest id"
+        },
+        "customerName": {
+          "type": "string",
+          "description": "Recipient full name",
+          "maxLength": 100
+        },
+        "email": {
+          "type": "string",
+          "description": "Customer email",
+          "maxLength": 120
+        },
+        "phone": {
+          "type": "string",
+          "description": "Customer phone number",
+          "maxLength": 20
+        },
+        "address": {
+          "type": "string",
+          "description": "Delivery address",
+          "maxLength": 500
+        },
+        "items": {
+          "type": "array",
+          "description": "List of ordered items with size and quantity"
+        },
+        "totalAmount": {
+          "type": "number",
+          "description": "Total order amount in BDT"
+        },
+        "paymentMethod": {
+          "type": "string",
+          "description": "Selected payment method",
+          "enum": ["Cash on Delivery", "Online Payment"]
+        },
+        "status": {
+          "type": "string",
+          "description": "Current order lifecycle status",
+          "enum": ["Pending", "Confirmed", "Delivered", "Cancelled"]
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Creation timestamp"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Last update timestamp"
+        }
+      },
+      "required": ["id", "customerName", "phone", "address", "totalAmount", "status"]
+    },
+    "Combo": {
+      "title": "Combo",
+      "description": "Promotional combo package offer",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Combo unique identifier"
+        },
+        "badge": {
+          "type": "string",
+          "description": "Badge text e.g. EXCLUSIVE OFFER",
+          "maxLength": 50
+        },
+        "eyebrow": {
+          "type": "string",
+          "description": "Small header highlight text",
+          "maxLength": 100
+        },
+        "title": {
+          "type": "string",
+          "description": "Combo offer main title",
+          "maxLength": 150
+        },
+        "description": {
+          "type": "string",
+          "description": "Offer details and contents",
+          "maxLength": 500
+        },
+        "metaLabel": {
+          "type": "string",
+          "description": "Label for value e.g. Save",
+          "maxLength": 50
+        },
+        "metaValue": {
+          "type": "string",
+          "description": "Value e.g. 25% Off",
+          "maxLength": 50
+        },
+        "buttonText": {
+          "type": "string",
+          "description": "Call to action button text",
+          "maxLength": 50
+        },
+        "theme": {
+          "type": "string",
+          "description": "Visual theme e.g. dark, gold, amber",
+          "maxLength": 50
+        },
+        "image": {
+          "type": "string",
+          "description": "Banner promotional image URL"
+        },
+        "isActive": {
+          "type": "boolean",
+          "description": "Offer ON or OFF switch"
+        }
+      },
+      "required": ["id", "title", "isActive"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Customer personal profile"
+    },
+    "/admins/{adminId}": {
+      "schema": "Admin",
+      "description": "Authorized administrator record"
+    },
+    "/products/{productId}": {
+      "schema": "Product",
+      "description": "Perfume product catalog items"
+    },
+    "/orders/{orderId}": {
+      "schema": "Order",
+      "description": "Customer e-commerce orders"
+    },
+    "/combos/{comboId}": {
+      "schema": "Combo",
+      "description": "Store combo offers"
+    }
+  }
+}
